@@ -6,7 +6,7 @@ Yashendra Goyal,<br />
 
 # Arrays
 
-* [Arrays Concept](https://github.com/ygoyal25/dsa-javascript/blob/master/data-structures/linked-arrays/sort-array.js)
+* [Arrays Concept](https://github.com/ygoyal25/dsa-javascript/blob/master/data-structures/arrays/sort-array.js)
     * [Array sorting methods](arrays/sort-array.js)
 
 # Linked Lists
