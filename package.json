@@ -1,0 +1,26 @@
+{
+  "name": "dsa-javascript",
+  "version": "1.0.0",
+  "description": "Algorithms and Data-Structures in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-personal:ygoyal25/dsa-javascript.git"
+  },
+  "keywords": [
+    "Javascript",
+    "Data-Structures",
+    "Algorithms"
+  ],
+  "author": "Yashendra Goyal",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "jest": "^26.3.0"
+  }
+}

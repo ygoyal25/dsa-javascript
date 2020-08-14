@@ -1,33 +1,27 @@
-class LinkedList {
+import Node from "./node";
+
+export default class LinkedList {
     constuctor() {
         this.head = null;
         this.tail = null;
     }
 
     append(value) {
+        let newNode = new Node(value, null);
         let node = this.head;
         if (node) {
             while(node.next) {
                 node = node.next;
             }
-            node.next = {
-                value,
-                next: null,
-            }
+            node.next = newNode;
         } else {
-            this.head = {
-                value,
-                next: null,
-            }
+            this.head = newNode;
         }
     }
 
     prepend(value) {
-        const node = {
-            value,
-            next: this.head,
-        }
-        this.head = node;
+        let newNode = new Node(value, this.head);
+        this.head = newNode;
     }
 
     delete(value) {
@@ -40,12 +34,7 @@ class LinkedList {
     search(value) {
         let node = this.head;
         let searchNode = null;
-        // if (!node) {
-        //     return false;
-        // }
-        // if (node.value === value) {
-        //     return true;
-        // }
+       
         while(node) {
             if (node.value === value) {
                 return node;
