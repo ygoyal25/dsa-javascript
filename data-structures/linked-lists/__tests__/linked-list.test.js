@@ -8,5 +8,5 @@ test('create a linked list', () => {
     list.append(8);
     list.traverse();
     const middle = findMiddle(list);
-    console.log(middle);
+    expect(middle).toBe(5);
 });
