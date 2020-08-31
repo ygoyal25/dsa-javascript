@@ -43,14 +43,4 @@ export default class LinkedList {
         }
         return searchNode;
     }
-
-    traverse() {
-        let node = this.head;
-        while(node) {
-            if (node.value) {
-                console.log(node.value);
-            }
-            node = node.next;
-        }
-    }
 }
