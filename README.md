@@ -20,7 +20,8 @@ Yashendra Goyal,<br />
 
 * **Mathematics**
   * [Bit Manipulation](algorithms/mathematics/bits) - set/get/update/clear bits, multiplication/division by two, make negative etc.
-  * [Bit Manipulation](algorithms/mathematics/bits) - set/get/update/clear bits, multiplication/division by two, make negative etc.
+  * [Fast Exponentation](algorithms/mathematics/fast-exponentation) - fast exponentation algorithm.
+  * [Primes Before N](algorithms/mathematics/find-primes) - find primes before N using prime-sieve algorithm.
 
 * **arrays**
   * [Sub Array With Given Sum](algorithms/arrays/subarray-with-given-sum) - find subarray from an array with a given sum.
