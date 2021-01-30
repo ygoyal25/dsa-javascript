@@ -6,6 +6,7 @@ function levelOrder(tree) {
     }
 
     const height = findHeight(tree);
+    console.log("Heig", height);
 
     for(let i = 0; i < height; i++) {
         levelTraverse(tree, i);
@@ -16,12 +17,15 @@ function levelTraverse(tree, height) {
     if (!tree) {
         return;
     }
-    if (!height) {
+
+    if (height === 0) {
         console.log(tree.data);
     }
 
-    levelTraverse(tree.left, height - 1);
-    levelTraverse(tree.right, height - 1);
+    if (height >= 0) {
+        levelTraverse(tree.left, height - 1);
+        levelTraverse(tree.right, height - 1);
+    }
 }
 
 export default levelOrder;

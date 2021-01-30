@@ -1,8 +1,8 @@
 function findHeight(tree) {
     if (!tree) return 0;
 
-    lHeight = findHeight(tree.left);
-    rHeight = findHeight(tree.rHeight);
+    let lHeight = findHeight(tree.left);
+    let rHeight = findHeight(tree.right);
 
     if (lHeight > rHeight) {
         return lHeight + 1
