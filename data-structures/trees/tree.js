@@ -25,4 +25,4 @@ function createTree() {
     return root;
 }
 
-export default createTree();
+export default createTree;
