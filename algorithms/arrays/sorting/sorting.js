@@ -1,6 +1,7 @@
 class ArraySort {
     constructor(arr) {
         this.arr = arr;
+        this.times = 0;
     }
 
     insertSort(){
@@ -33,41 +34,86 @@ class ArraySort {
 
     }
 
-    sortMerge(leftArr, rightArr) {
-        let i = 0, j = 0, k = 0;
-        const sortedArr = [];
+    sortMerge(arr, start, mid, end) {
+        this.times += 1;
+        console.log('Called', this.times, { start, mid, end })
+        const leftArr = [];
+        const rightArr = [];
+
+        for(var i = start; i <= mid; i++) {
+            leftArr.push(arr[i]);
+        }
+
+        for(var j = mid + 1; j <= end; j++) {
+            rightArr.push(arr[j]);
+        }
+
+        i = 0; j = 0;
+        let k = start;
         while(i < leftArr.length && j < rightArr.length) {
             if (leftArr[i] < rightArr[j]) {
-                sortedArr.push(leftArr[i]);
-                i++;
+                arr[k++] = leftArr[i++];
             } else {
-                sortedArr.push(rightArr[j]);
-                j++;
+                arr[k++] = rightArr[j++];
             }
         }
 
         while(j < rightArr.length) {
-            sortedArr.push(rightArr[j]);
-            j++;
+            arr[k++] = rightArr[j++];
         }
         
         while(i < leftArr.length) {
-            sortedArr.push(leftArr[i]);
-            i++;
+            arr[k++] = leftArr[i++];
         }
-
-        return sortedArr;
+        return arr;
     }
 
-    mergeSort(arr = this.arr) {
-        if (arr.length === 1) {
+    mergeSort(arr = this.arr, start = 0, end = this.arr.length - 1) {
+        if (start >= end) {
             return arr;
         }
 
-        const mid = arr.length / 2;
-        const leftSort = this.mergeSort(arr.slice(0, mid));
-        const rightSort = this.mergeSort(arr.slice(mid));
+        const mid = Math.floor((start + end) / 2);
+        this.mergeSort(arr, start, mid);
+        this.mergeSort(arr, mid + 1, end);
 
-        return this.sortMerge(leftSort, rightSort);
+        return this.sortMerge(arr, start, mid, end);
+    }
+
+    quickSort(arr = this.arr, low = 0, high = this.arr.length - 1) {
+        if (high <= low) {
+            return arr;
+        }
+        
+        let pivotIndex = this.partition(arr, low, high);
+
+        this.quickSort(arr, low, pivotIndex - 1);
+        this.quickSort(arr, pivotIndex + 1, high);
+
+        return arr;
+    }
+
+    partition(arr, low, high) {
+        let pivot = arr[high];
+
+        let i = low - 1;
+        for(let j = low; j < high; j++) {
+            if (pivot > arr[j]) {
+                i++;
+                this.swap(arr, i, j);
+            }
+        }
+        i++
+        this.swap(arr, i, high);
+
+        return i;
+    }
+
+    swap(arr, i, j) {
+        const temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
+
+export default ArraySort;
