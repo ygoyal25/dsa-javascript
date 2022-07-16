@@ -1,6 +1,7 @@
 function stockBuySell(arr) {
     let buyIndex = -1;
     let sellIndex = -1;
+    let profit = 0;
     for(var i = 0; i < arr.length - 1; i++) {
         while(arr[i] >= arr[i + 1]) {
             i++;
@@ -12,9 +13,9 @@ function stockBuySell(arr) {
         }
         sellIndex = i - 1;
         i--;
-        console.log(buyIndex, sellIndex);
+        profit += sellIndex > buyIndex ? arr[sellIndex] - arr[buyIndex] : 0;
     }
+    return profit;
 }
 
-stockBuySell([100,180,260,310,40,535,695])
-stockBuySell([4,2,2,2,4])
+export default stockBuySell;

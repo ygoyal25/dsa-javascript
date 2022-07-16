@@ -1,5 +1,5 @@
-function Node(data) {
-    this.data = data;
+function Node(val) {
+    this.val = val;
     this.left = null;
     this.right = null;
 }

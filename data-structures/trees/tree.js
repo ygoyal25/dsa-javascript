@@ -18,10 +18,9 @@ function createTree() {
     n1.left = n3;
     n1.right = n4;
     n2.left = n5;
-    n2.right = 7;
+    n2.right = n6;
     n3.left = n7;
     n3.right = n8;
-    console.log(root.left.data);
     return root;
 }
 
