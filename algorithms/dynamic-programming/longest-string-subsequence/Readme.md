@@ -1,4 +1,4 @@
-**Longest Substring Chain**
+**Longest String Subsequence**
 
 You are given an array of words where each word consists of lowercase English letters.
 
@@ -27,7 +27,7 @@ Input: words = ["abcd","dbqca"]
 Output: 1
 Explanation: The trivial word chain ["abcd"] is one of the longest word chains.
 ["abcd","dbqca"] is not a valid word chain because the ordering of the letters is changed.
-```
+``` 
 
 Constraints:
 

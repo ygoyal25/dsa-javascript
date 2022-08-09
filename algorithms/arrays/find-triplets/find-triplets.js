@@ -1,25 +1,31 @@
 function findTriplets(arr) {
+    arr = arr.sort((a,b) => a - b);
+    console.log(arr);
     // Start from end till we reach index
-    let i = arr.length - 1;
+    let start = 0;
     let count = 0
-    while(i >= 2) {
+    while(start < arr.length - 2) {
         // Take a pointer on initial index, and one before i
-        let j = 0;
-        let k = i - 1;
-        while(k > j) {
+        let mid = start + 1;
+        let end = arr.length - 1;
+        while(end > mid) {
             // If the triplet is found
-            if (arr[i] === arr[j] + arr[k]) {
+            if (arr[end] === arr[start] + arr[mid]) {
                 count += 1;
-                k -= 1;
-            } else if (arr[i] > arr[j] + arr[k]) {
-                j += 1;
+                end -= 1;
+            } else if (arr[end] < arr[start] + arr[mid]) {
+                break;
             } else {
-                k -= 1;
+                end -= 1;
             }
+            // console.log({ start, mid, end })
         }
-        i -= 1;
+        // console.log({ start, mid, end })
+        start += 1;
     }
     return count || "No Triplets Found!!!"
 }
 
-export default findTriplets;
+console.log(findTriplets([1,5,1,2,3]));
+
+// export default findTriplets;

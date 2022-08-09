@@ -45,4 +45,4 @@ function minHeapify(arr, i) {
 // maxHeapify(arr, 0);
 // console.log(arr);
 
-module.exports = { maxHeapify, minHeapify }
+export { maxHeapify, minHeapify };

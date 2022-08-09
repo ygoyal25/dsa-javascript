@@ -17,7 +17,7 @@ export default function SubArrWithSumN(arr, n) {
 export function SubArrWithSumNOpt(arr, n) {
     let sum = 0;
     let startIndex = 0
-    for(let i = startIndex; i<arr.length; i++) {
+    for(let i = startIndex; i < arr.length; i++) {
         sum += arr[i];
         if (sum === n) {
             return [startIndex, i];

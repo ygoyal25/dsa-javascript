@@ -5,7 +5,7 @@ function extractMax(arr) {
     arr[0] = arr[arr.length - 1];
     arr.length = arr.length - 1;
     maxHeapify(arr, 0);
-    console.log(arr);
+    return max;
 }
 
 function extractMin(arr) {
@@ -13,9 +13,7 @@ function extractMin(arr) {
     arr[0] = arr[arr.length - 1];
     arr.length = arr.length - 1;
     minHeapify(arr, 0);
-    console.log(arr);
+    return min;
 }
-
-// extractMin([1,2,3,4,5,6,7,8]);
 
 module.exports = { extractMax, extractMin };

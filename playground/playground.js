@@ -1,4 +1,4 @@
-export default function longestPal(str) {
+function longestPal(str) {
     const mat = [];
     let palstr = '';
     let row = 0;
@@ -17,10 +17,10 @@ export default function longestPal(str) {
             if (checkIfPal(mat, str, i, j) && j - i + 1 > palstr.length) {
                 palstr =  str.slice(i, j+1);
             }
-            // console.log(mat);
+            console.log(mat);
         }
     }
-    // console.log(palstr)
+    console.log(palstr)
     return palstr;
 }
 
@@ -33,5 +33,4 @@ function checkIfPal(mat, str, start, end) {
     return mat[start][end]
 }
 
-// longestPalindrome("abaccbcc");
-// longestPalindrome("abc");
+longestPal('abaccbcc')

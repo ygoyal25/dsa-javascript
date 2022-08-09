@@ -4,10 +4,24 @@ class ArraySort {
         this.times = 0;
     }
 
+    selectionSort() {
+        const arr = this.arr;
+        for(var i = 0; i < arr.length - 1; i++) {
+            let minIndex = i;
+            for(var j = i + 1; j < arr.length; j++) {
+                if (arr[minIndex] > arr[j]) {
+                    minIndex = j;
+                }
+            }
+            [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+        }
+        return arr;
+    }
+
     insertSort(){
         const arr = this.arr;
         for(var i=0; i<arr.length - 1; i++) {
-            for(var j=i+1; j>0; j--) {
+            for(var j= i + 1; j > 0; j--) {
                 let key = arr[j]
                 if (key <  arr[j-1]) {
                     arr[j] = arr[j-1];
@@ -35,8 +49,6 @@ class ArraySort {
     }
 
     sortMerge(arr, start, mid, end) {
-        this.times += 1;
-        console.log('Called', this.times, { start, mid, end })
         const leftArr = [];
         const rightArr = [];
 

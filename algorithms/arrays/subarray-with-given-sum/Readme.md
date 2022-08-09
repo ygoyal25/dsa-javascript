@@ -1,5 +1,8 @@
+**Contiguous SubArray with given sum**
+
 Given an unsorted array A of size N that contains only non-negative integers, find a continuous sub-array which adds to a given number S.
 
+```
 Input:
 N = 5, S = 12
 A[] = {1,2,3,7,5}
@@ -15,3 +18,4 @@ Output: 1 5
 Explanation: The sum of elements 
 from 1st position to 5th position
 is 15.
+```

@@ -11,4 +11,15 @@ function findHeight(tree) {
     }
 }
 
-export default findHeight;
+// export default findHeight;
+
+
+function heightOfTree(root) {
+    if (root === null) {
+        return 0;
+    }
+
+    return 1 + Math.max(heightOfTree(root.left), heightOfTree(root.right));
+}
+
+export default heightOfTree;

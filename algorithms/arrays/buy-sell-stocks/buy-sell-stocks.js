@@ -1,19 +1,15 @@
-function stockBuySell(arr) {
-    let buyIndex = -1;
-    let sellIndex = -1;
+function stockBuySell(arr, onlyOnceAllowed = false) {
+    let min = Infinity;
     let profit = 0;
-    for(var i = 0; i < arr.length - 1; i++) {
-        while(arr[i] >= arr[i + 1]) {
-            i++;
+    for(var i = 0; i < arr.length; i++) {
+        min = Math.min(arr[i], min);
+        if (onlyOnceAllowed) {
+            profit = Math.max(profit, arr[i] - min);
+        } else {
+            // Set the new min as we have already consumed this profit
+            profit += arr[i] > min ? arr[i] - min : 0;
+            min = arr[i];
         }
-        buyIndex = i;
-        i += 1;
-        while(arr[i - 1] <= arr[i]) {
-            i++
-        }
-        sellIndex = i - 1;
-        i--;
-        profit += sellIndex > buyIndex ? arr[sellIndex] - arr[buyIndex] : 0;
     }
     return profit;
 }

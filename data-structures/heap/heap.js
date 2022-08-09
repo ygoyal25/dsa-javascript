@@ -1,4 +1,4 @@
-const { maxHeapify, minHeapify } = require('../heap/heapify');
+import { maxHeapify, minHeapify } from '../heap/heapify';
 
 function createHeap(arr, type = 'MAX') {
     const innerNodes = Math.floor(arr.length / 2);
@@ -12,4 +12,4 @@ function createHeap(arr, type = 'MAX') {
     return arr;
 }
 
-module.exports = { createHeap }
+export default createHeap;

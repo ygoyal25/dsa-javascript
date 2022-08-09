@@ -21,4 +21,16 @@ describe('Stock Buy Sell', () => {
         const profit = stockBuySell([4,2,2,2,4])
         expect(profit).toBe(2);
     });
+
+    test('Case 5', () => {
+        const onlyOnceAllowed = true;
+        const profit = stockBuySell([100,180,260,310,40,535,695], onlyOnceAllowed)
+        expect(profit).toBe(655);
+    });
+
+    test('Case 6', () => {
+        const onlyOnceAllowed = true;
+        const profit = stockBuySell([7,1,5,3,6,4], onlyOnceAllowed)
+        expect(profit).toBe(5);
+    });
 })
