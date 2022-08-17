@@ -42,4 +42,4 @@ function matchingSubseq(s, arr) {
     return count;
 }
 
-matchingSubseq('abcde', ['a', 'bb', 'acd', 'ace']);
+console.log(matchingSubseq('abcde', ['a', 'bb', 'acd', 'ace']));

@@ -1,4 +1,4 @@
-const { maxHeapify, minHeapify } = require("./heapify");
+import { maxHeapify, minHeapify } from './heapify';
 
 function extractMax(arr) {
     let max = arr[0];
@@ -16,4 +16,4 @@ function extractMin(arr) {
     return min;
 }
 
-module.exports = { extractMax, extractMin };
+export { extractMax, extractMin };

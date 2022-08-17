@@ -4,7 +4,7 @@ function rotateMat(mat) {
     let newMat = mat.map(m => Array(m.length));
     for(var row = 0; row < rows; row++) {
         for(var col = 0; col < cols; col++) {
-            newMat[row][col] = mat[rows - 1 - col][row];
+            newMat[row][col] = mat[cols - 1 - col][row];
         }
     }
     // console.log(newMat);

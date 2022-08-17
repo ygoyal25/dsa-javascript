@@ -1,7 +1,7 @@
 function findLeaves(root) {
     const heightArr = [];
     getNodeHeightArr(root, heightArr);
-    return heightArr; 
+    return heightArr;
 }
 
 // Mark the leaves with their corresponding height, leaf with 0, parent to leaf 1, grand parent to leaf 2, so on 

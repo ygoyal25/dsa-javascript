@@ -10,14 +10,15 @@ function findTriplets(arr) {
         let end = arr.length - 1;
         while(end > mid) {
             // If the triplet is found
+            if (arr[end] < arr[start] + arr[mid]) {
+                break;
+            }
+
             if (arr[end] === arr[start] + arr[mid]) {
                 count += 1;
-                end -= 1;
-            } else if (arr[end] < arr[start] + arr[mid]) {
-                break;
-            } else {
-                end -= 1;
+                
             }
+            end -= 1;
             // console.log({ start, mid, end })
         }
         // console.log({ start, mid, end })

@@ -20,18 +20,17 @@ function getLongestPath(arr, i = 0) {
         return wordAndWordChainMap.get(arr[i]);
     }
     
-    let subStrLen = 0;
+    let nextStringChainLen = 0;
     let j = i + 1;
     while(j < arr.length && (arr[i].length - arr[j].length) <= 1) {
         if(isValidPred(arr[j], arr[i])) {
-            let lenFromJ = getLongestPath(arr, j);
-            subStrLen = Math.max(subStrLen, lenFromJ);
+            nextStringChainLen = getLongestPath(arr, j);
         }
         j++;
     }
     // console.log({ subStrLen });
-    wordAndWordChainMap.set(arr[i], 1 + subStrLen);
-    return 1 + subStrLen;
+    wordAndWordChainMap.set(arr[i], 1 + nextStringChainLen);
+    return 1 + nextStringChainLen;
 }
 
 function isValidPred(pred, succ) {

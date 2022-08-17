@@ -5,7 +5,7 @@ export default function(head) {
         return head;
     }
 
-    fastPointer = fastPointer.next
+    // fastPointer = fastPointer.next
 
     // Check if it is the last node
     while(fastPointer && fastPointer.next) {

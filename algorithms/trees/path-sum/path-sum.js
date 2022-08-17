@@ -4,7 +4,7 @@ function pathSum(root, targetSum, method = 'REC', sum = targetSum) {
             return false;
         }
 
-        sum += root.val;
+        sum -= root.val;
         if (root.left === null && root.right === null) {
             return sum === 0;
         }

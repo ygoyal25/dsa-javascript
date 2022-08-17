@@ -31,7 +31,7 @@ function nextPermutation(nums) {
         while(nums[numToChange] < nums[j]) {
             j++;
         }
-        [nums[numToChange], nums[j - 1]] = [nums[j - 1], nums[numToChange]];    
+        [nums[numToChange], nums[j - 1]] = [nums[j - 1], nums[numToChange]];
         // console.log('After', numToChange, nums);
     }
 

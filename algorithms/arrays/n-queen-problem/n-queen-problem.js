@@ -12,18 +12,19 @@ function nQueen(n) {
         // console.log('Top', { row, mat, rowsDone, colsDone });
 
         if (row >= n) {
+            // Only doing this because answer was in a different format on leetcode, nothing else
             arr.push(mat.map(m => [...m]));
             return;
         }
 
-        for(var j = 0; j < cols; j++) {
+        for(var col = 0; col < cols; col++) {
             // console.log('Inside For', { row, j });
-            if (!checkIsSafe(row, j)) {
+            if (!checkIsSafe(row, col)) {
                 continue
             }
-            mat[row][j] = 'Q';
+            mat[row][col] = 'Q';
             placeQueen(row + 1, 0);
-            mat[row][j] = '.';
+            mat[row][col] = '.';
         }
     }
     return arr.map(a => a.map(s => s.join('')));
@@ -40,7 +41,7 @@ function nQueen(n) {
 
             // Check left diagonal
             r = row - 1;
-            c = col - 1;
+            let c = col - 1;
             while(isSafe && r >= 0 && c >= 0) {
                 isSafe = mat[r][c] !== 'Q';
                 r--;

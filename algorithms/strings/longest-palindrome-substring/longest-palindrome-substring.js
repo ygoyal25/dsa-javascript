@@ -7,7 +7,7 @@ export default function longestPal(str) {
         // Filling the diagonal as 1 as one char would always be a palindrome
         mat[row][row] = true;
         if (row < str.length - 1) {
-            mat[row][row+1] = str[row] === str[row+1];
+            mat[row][row + 1] = str[row] === str[row + 1];
         }
         row++
     }

@@ -28,4 +28,4 @@ function checkIfPal(str) {
     return true;
 }
 
-console.log(palindromePartition('aab'));
+console.log(palindromePartition('aabbc'));

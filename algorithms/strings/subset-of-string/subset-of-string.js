@@ -4,14 +4,14 @@ function subSet(str) {
     let i = 0;
     while(i < totalSubStrs) {
         let currBit = 0;
-        let subStr = ""
+        let subStr = "";
         while(currBit < totalBits) {
             if ((1 << currBit) & i) {
                 subStr += str[currBit];
             }
             currBit++;
         }
-        console.log(subStr);
+        console.log('SubString', subStr);
         i++
     }
 }

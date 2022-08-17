@@ -1,3 +1,5 @@
+import createTree from '../../../data-structures/trees/';
+
 function printLeftView(root, levels_covered = [], curr_level = 1) {
     if (root && root.data && levels_covered.length < curr_level) {
         console.log(root.data);
@@ -12,3 +14,5 @@ function printLeftView(root, levels_covered = [], curr_level = 1) {
         printLeftView(root.right, levels_covered, curr_level+1);
     }
 }
+
+printLeftView(createTree())

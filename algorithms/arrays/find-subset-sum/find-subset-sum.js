@@ -54,6 +54,9 @@ function uniqueCombinations(arr, target) {
         }
 
         for(var ind = i; ind < arr.length; ind++) {
+            if (ind > 0 && arr[ind] === arr[ind - 1]) {
+                continue;
+            }
             getUniqueCombinations(ind, [...currComb, arr[ind]], prevSum + arr[ind]);
         }
     }
