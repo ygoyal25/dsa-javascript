@@ -1,7 +1,7 @@
 // Can Router range reach from source to destination
 
-const routers = [['A', 0, 0], ['B', 2, 5], ['C', 5, 5], ['D', 0, 15], ['E', 3, 4]];
-const range = 5;
+const routers = [['A', 0, 0], ['B', 2, 0], ['C', 5, 5], ['D', 0, 15], ['E', 3, 1]];
+const range = 2;
 
 function isInRange(router1, router2) {
     return range >= Math.sqrt(Math.pow(router1[1] - router2[1], 2) + Math.pow(router1[2] - router2[2], 2));
@@ -47,7 +47,7 @@ function getPath(s, d, map) {
         return false;
     }
 
-    // console.log({ map, s, visited });
+    console.log({ map, s, visited });
     visited.add(s);
     for (let ind = 0; ind < map[s].length; ind++) {
         if (getPath(map[s][ind], d, map)) {
@@ -57,4 +57,4 @@ function getPath(s, d, map) {
     return false;
 }
 
-console.log(canReach('A', 'C'));
+console.log(canReach('A', 'E'));

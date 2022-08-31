@@ -15,4 +15,4 @@ function printLeftView(root, levels_covered = [], curr_level = 1) {
     }
 }
 
-printLeftView(createTree())
+export default printLeftView;

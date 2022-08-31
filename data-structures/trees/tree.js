@@ -8,20 +8,19 @@
 
 import Node from "../trees/node";
 
-function createTree() {
-    let root = new Node(1);
-    let [n1, n2] = [new Node(2), new Node(3)];
-    let [n3, n4, n5, n6] = [new Node(4), new Node(5), new Node(6), new Node(7)];
-    let [n7, n8] = [new Node(11), new Node(8)];
-    root.left = n1;
-    root.right = n2;
-    n1.left = n3;
-    n1.right = n4;
-    n2.left = n5;
-    n2.right = n6;
-    n3.left = n7;
-    n3.right = n8;
-    return root;
+function createTree(arr) {
+    let n = 0;
+    return getNode(arr, 0);
+}
+
+function getNode(arr, n) {
+    if (n >= arr.length || arr[n] === null) {
+        return null;
+    }
+    let node = new Node(arr[n]);
+    node.left = getNode(arr, 2*n + 1);
+    node.right = getNode(arr, 2*n + 2);
+    return node;
 }
 
 export default createTree;
