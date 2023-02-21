@@ -17,7 +17,7 @@ function postOrderTraversal(tree, method = 'REC', traverseArray = []) {
                 stack.push(curr);
                 curr = curr.left;
             }
-            curr = curr[curr.length - 1];
+            curr = stack[stack.length - 1];
             if (curr.right) {
                 curr = curr.right;
                 stack.push(curr);

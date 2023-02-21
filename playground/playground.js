@@ -1,20 +1,56 @@
-import createTree from '../data-structures/trees/tree';
+import MinPriorityQueue from '../data-structures/priority-queue/min-priority-queue';
 
-function printLeftView(root, levels_covered = [], curr_level = 1) {
-    if (root && root.val && levels_covered.length < curr_level) {
-        console.log(root.val);
-        levels_covered.push(1);
+var getLengthOfOptimalCompression = function(s, k) {
+    let map = {};
+    for(var i = 0; i < s.length; i++) {
+        var char = s[i];
+        if (!map[char]) {
+            map[char] = 0;
+        }
+        map[char] += 1;
     }
 
-    if (root.left) {
-        printLeftView(root.left, levels_covered, curr_level+1);
+    let pQ = new MinPriorityQueue({
+        compare: (a, b) => a.value - b.value
+    });
+
+    Object.keys(map).forEach(key => {
+        pQ.enqueue({ key, value: map[key] });
+    })
+
+    // console.log('HERE', pQ.arr);
+    // pQ.dequeue();
+    // console.log('HERE',pQ.arr);
+    // pQ.dequeue();
+    // console.log('HERE',pQ.arr);
+    // pQ.dequeue();
+    // console.log('HERE',pQ.arr);
+    // pQ.dequeue();
+    // console.log('HERE',pQ.arr);
+    // pQ.dequeue();
+    // console.log('HERE',pQ.arr);
+
+    while(k > 0) {
+        let { key, value } = pQ.front();
+        if (value <= k) {
+            pQ.dequeue();
+        } else {
+            pQ.dequeue();
+            pQ.enqueue({ key, value: value - k });
+        }
+        k -= value;
+        map[key] -= value;
     }
 
-    if (root.right) {
-        printLeftView(root.right, levels_covered, curr_level+1);
+    // console.log(map);
+    let count = 0
+    for(const key in map) {
+        if (map[key]) {
+            count += `${key}${map[key]}`.length;
+        }
     }
-}
+    return count;
 
-const tree = createTree();
-console.log(tree)
-printLeftView(tree)
+};
+
+console.log(getLengthOfOptimalCompression("aaabccd", 3))
