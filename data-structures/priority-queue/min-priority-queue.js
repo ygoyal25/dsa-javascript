@@ -1,5 +1,6 @@
 class minPriorityQueue {
-    constructor({compare}) {
+    constructor(compare) {
+        console.log("COMPARE>>>", compare);
         this.arr = [];
         this.compare = compare || ((a, b) => a - b);
     }

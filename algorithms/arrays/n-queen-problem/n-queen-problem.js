@@ -23,7 +23,7 @@ function nQueen(n) {
                 continue
             }
             mat[row][col] = 'Q';
-            placeQueen(row + 1, 0);
+            placeQueen(row + 1);
             mat[row][col] = '.';
         }
     }

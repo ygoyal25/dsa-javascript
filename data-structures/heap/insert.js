@@ -5,7 +5,7 @@ function insertMax(arr, elem) {
     // Check if the parent is smaller, then shift upwards
     let i = arr.length - 1;
     while(i > 0 && arr[Math.ceil(i/2) - 1] < arr[i]) {
-        [arr[Math.ceil(i/2) - 1], arr[i]] = [arr[i], arr[Math.ceil(i/2) - 1], arr[i]];
+        [arr[Math.ceil(i/2) - 1], arr[i]] = [arr[i], arr[Math.ceil(i/2) - 1]];
         i = Math.ceil(i / 2) - 1;
     }
     // console.log(arr);
@@ -18,11 +18,11 @@ function insertMin(arr, elem) {
     // Check if the parent is greater, then shift upwards
     let i = arr.length - 1;
     while(i > 0 && arr[Math.ceil(i/2) - 1] > arr[i]) {
-        [arr[Math.ceil(i/2) - 1], arr[i]] = [arr[i], arr[Math.ceil(i/2) - 1], arr[i]];
+        [arr[Math.ceil(i/2) - 1], arr[i]] = [arr[i], arr[Math.ceil(i/2) - 1]];
         i = Math.ceil(i / 2) - 1;
     }
     console.log(arr);
     return arr;
 }
 
-module.exports = { insertMax, insertMin };
+export { insertMax, insertMin };

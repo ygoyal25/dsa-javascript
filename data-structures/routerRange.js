@@ -43,10 +43,6 @@ function getPath(s, d, map) {
         return true;
     }
 
-    if (map[s] === []) {
-        return false;
-    }
-
     console.log({ map, s, visited });
     visited.add(s);
     for (let ind = 0; ind < map[s].length; ind++) {

@@ -1,7 +1,7 @@
-import LL from "../linked-list";
-import findMiddle from "../../../algorithms/linked-list/find-middle";
-import sort from "../../../algorithms/linked-list/sort";
-import traverse from "../../../algorithms/linked-list/traverse";
+import LL from "../../data-structures/linked-lists/linked-list";
+// import findMiddle from "../../algorithms/linked-list/find-middle";
+import sort from "../../algorithms/linked-list/sort";
+import traverse from "../../algorithms/linked-list/traverse";
 
 test('create a linked list', () => {
     const list = new LL();

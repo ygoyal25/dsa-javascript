@@ -20,7 +20,7 @@ SegmentTree.prototype.add = function(arr, ind, start, end) {
 // s and e are the range for which we need to find max
 SegmentTree.prototype.query = function(ind, start, end, s, e) {
     // Node has Complete overlap in the range to find
-    // console.log({ ind, start, end, s, e })
+    console.log({ ind, start, end, s, e })
     if (start >= s && end <= e) {
         return this.segment[ind];
     }
@@ -39,4 +39,4 @@ SegmentTree.prototype.query = function(ind, start, end, s, e) {
 }
 
 const segmentTree = new SegmentTree([4,3,5,8,9,10,11,6]);
-console.log(segmentTree.segment, segmentTree.query(0, 0, 7, 2, 5));
+console.log(segmentTree.query(0, 0, 7, 1, 2));

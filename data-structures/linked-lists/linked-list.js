@@ -43,4 +43,21 @@ export default class LinkedList {
         }
         return searchNode;
     }
+
+    findMiddle() {
+        let head = this.head;
+
+        if (!head) {
+            return head;
+        }
+    
+        let slowPointer = head, fastPointer = head.next;
+    
+        while(fastPointer && fastPointer.next) {
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
+        }
+    
+        return slowPointer;
+    }
 }
